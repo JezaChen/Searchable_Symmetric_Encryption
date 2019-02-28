@@ -539,37 +539,83 @@ class SSEClient:
         生成密钥(k1,k2,k3,k4)
         :return:
         """
-        k1, k2, k3, k4 = self.gen()
-        print('========THE KEY========')
-        print('{}\n{}\n{}\n{}'.format(base64.b64encode(k1).decode(encoding='UTF-8'),
-                                      base64.b64encode(k2).decode(encoding='UTF-8'),
-                                      base64.b64encode(k3).decode(encoding='UTF-8'),
-                                      base64.b64encode(k4).decode(encoding='UTF-8')))
-        print('========THE KEY========')
-        # 保存密钥
-        self.save_keys()
-        printer.print_success('密钥文件已保存至本地.')
+
+        def generate_keys_action():
+            k1, k2, k3, k4 = self.gen()
+            print('========THE KEY========')
+            print('{}\n{}\n{}\n{}'.format(base64.b64encode(k1).decode(encoding='UTF-8'),
+                                          base64.b64encode(k2).decode(encoding='UTF-8'),
+                                          base64.b64encode(k3).decode(encoding='UTF-8'),
+                                          base64.b64encode(k4).decode(encoding='UTF-8')))
+            print('========THE KEY========')
+            # 保存密钥
+            self.save_keys()
+            printer.print_success('密钥文件已保存至本地.')
+
+        if 2 <= get_status_by_bits(self.status_bits) < 4 or get_status_by_bits(self.status_bits) == 7:  # 前面的步骤没有完成时
+            printer.print_error('操作失败，理由: ')
+            self.status()
+            return
+        if get_status_by_bits(self.status_bits) == 6 or get_status_by_bits(self.status_bits) == 1:
+            # 如果之前已经有了密文集或者已经上传到了服务器
+            # 需要告知用户谨慎生成密钥文件
+            printer.print_warning('已发现使用旧密钥加密后的密文集和索引，重新生成密钥需要重新自行执行enc和upload方法进行同步更新.\n'
+                                  '是否需要继续? (Y/N)')
+            ok = input()
+            if ok == 'Y' or ok == 'y':
+                generate_keys_action()
+            else:
+                printer.print_info('程序没有进行任何操作，退出...')
+
+        generate_keys_action()
 
     def encrypt(self):
         """
         生成索引、加密索引和加密文档
         :return:
         """
-        printer.print_info('检查明文目录下文件名格式是否符合要求...')
-        if not scanner.check_filename_format():
-            printer.print_info('不符合文件命名格式，请问是否需要执行自动格式化文件名操作? (Y/N)')
-            ok = input()
-            if ok == 'y' or ok == 'Y':
-                scanner.reformat_filename()
-                printer.print_success('格式化文件名成功!')
+
+        def encrypt_action():
+            printer.print_info('检查明文目录下文件名格式是否符合要求...')
+            if not scanner.check_filename_format():
+                printer.print_info('不符合文件命名格式，请问是否需要执行自动格式化文件名操作? (Y/N)')
+                ok = input()
+                if ok == 'y' or ok == 'Y':
+                    scanner.reformat_filename()
+                    printer.print_success('格式化文件名成功!')
+                else:
+                    printer.print_error('软件终止...请自行更改文件名以满足要求!')
             else:
-                printer.print_error('软件终止...请自行更改文件名以满足要求!')
-        else:
-            printer.print_success('检查完毕，文件名符合要求!')
-        printer.print_info('开始加密索引和文档...')
-        self.enc()
-        self.save_encrypted_index()  # 记得保存索引
-        printer.print_success('加密索引和文档成功')
+                printer.print_success('检查完毕，文件名符合要求!')
+            printer.print_info('开始加密索引和文档...')
+            self.enc()
+            self.save_encrypted_index()  # 记得保存索引
+            printer.print_success('加密索引和文档成功')
+
+        # if get_status_by_bits(self.status_bits) == 2:
+        #     printer.print_error('项目不存在，请先使用init方法对项目进行初始化操作，程序退出...')
+        #
+        # if self.status_bits & 8 == 0:
+        #     printer.print_error('明文集目前为空，无法进行加密操作，程序退出...')
+        #     return
+        # if self.status_bits & 2 == 0:
+        #     printer.print_error('找不到密钥文件，请确保已调用enc方法生成密钥文件，程序退出...')
+        #     return
+        if 2 <= get_status_by_bits(self.status_bits) < 5 or get_status_by_bits(self.status_bits) == 7:
+            printer.print_error('操作失败，理由: ')
+            self.status()
+            return
+
+        encrypt_action()
+
+    def upload(self):
+        """
+        上传密文、加密后的索引、配置文件到服务器上
+        :return:
+        """
+
+        def upload_action():
+            pass
 
 
 def test():
@@ -577,7 +623,7 @@ def test():
     client.generate_keys()
     client.save_keys()
     client.encrypt()
-    client.enc(None)
+    client.enc()
     client.save_encrypted_index()
     while True:
         keyword = input('Input the keyword: ')
@@ -595,7 +641,8 @@ def test1():
 
 
 def parse_args():
-    opts, args = getopt.getopt(sys.argv[1:], '-s-p:-i-g-e-u', ['status', 'project', 'init', 'gen', 'enc', 'upload'])
+    opts, args = getopt.getopt(sys.argv[1:], '-s-p:-i-g-e-u-f',
+                               ['status', 'project', 'init', 'gen', 'enc', 'upload', 'find'])
     client = None
     # 先初始化SSEClient对象
     for opt_name, opt_val in opts:
@@ -618,6 +665,9 @@ def parse_args():
             client.encrypt()
         if opt_name in ('-u', '--upload'):
             # client.upload
+            pass
+        if opt_name in ('-f', '--find'):
+            # client.find --> client.trpdrK
             pass
 
 

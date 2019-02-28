@@ -72,8 +72,6 @@ class SSEServer:
         self.k, self.l, self.s = self.load_config()
 
         self.T = [None] * (2 ** self.l)
-        self.k1, self.k2, self.k3, self.k4 = None, None, None, None
-        self.load_keys()
 
         # self.D = None
         self.distinct_word_set = None
@@ -230,9 +228,9 @@ class SSEServer:
 
 
 def test():
-    client = sse_client2.SSEClient(256, 16, 'test')
+    client = sse_client2.SSEClient(256, 16, 'test2')
     trapdoor = client.Trpdr_K('Xi')
-    server = SSEServer('test')
+    server = SSEServer('test2')
     res = server.search(trapdoor)
     print(res)
 
