@@ -568,6 +568,7 @@ class SSEClient:
             printer.print_success('检查完毕，文件名符合要求!')
         printer.print_info('开始加密索引和文档...')
         self.enc()
+        self.save_encrypted_index()  # 记得保存索引
         printer.print_success('加密索引和文档成功')
 
 

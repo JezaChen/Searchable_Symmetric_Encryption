@@ -1,18 +1,13 @@
 # coding=utf-8
 import os
-import re
 import hashlib
-import random
 import math
-import array
-import string
 from Crypto.Cipher import AES
-from Crypto import Random
 import scanner
-import printer
-import sys
-import base64
 import pickle
+
+# todo for a test
+import sse_client2
 
 
 def byte_alignment(length):
@@ -65,26 +60,20 @@ def extend_bytes_len(byte_str, target_length):
     return int.from_bytes(byte_str, byteorder="big").to_bytes(target_length, byteorder="big")
 
 
-class SSEClient:
-    def __init__(self, k, l):
-        # 检查参数，进行必要的错误或警告报告
-        if k != 128 and k != 192 and k != 256:
-            printer.print_error('The key length of AES must be 128, 192 or 256 bits.')
-            sys.exit(1)
-        if l % 8 != 0:
-            printer.print_warning('The length of the parameter l is not an integer multiple of 8.')
+def proj_exists(proj_name):
+    return os.path.isdir(proj_name)
 
-        self.k = k
-        self.k = byte_alignment(self.k)
 
-        self.s = scanner.get_s()
-        self.s = byte_alignment(self.s)
+class SSEServer:
+    def __init__(self, proj_name):
+        self.proj_name = proj_name
+        self.proj_dir_path = self.proj_name + '/'
 
-        self.l = l  # 在论文中，参数l需要指定
-        self.l = byte_alignment(self.l)
+        self.k, self.l, self.s = self.load_config()
 
         self.T = [None] * (2 ** self.l)
         self.k1, self.k2, self.k3, self.k4 = None, None, None, None
+        self.load_keys()
 
         # self.D = None
         self.distinct_word_set = None
@@ -95,11 +84,21 @@ class SSEClient:
 
         self.A = [None] * (2 ** self.s)
         self.entry_size_of_A = -1
+        self.load_encrypted_index()
+
         self.addrA = {}  # 组织成dict结构，用于获取每个链表第一个节点对应于A的位置
         self.k0_for_each_keyword = {}
 
         self.file_cnt = scanner.get_file_count()
         self.file_cnt_byte = int(math.ceil(math.log2(self.file_cnt) / 8))
+
+    def load_config(self):
+        """
+        读取配置文件
+        :return: k, l, s
+        """
+        with open(self.proj_dir_path + 'config', 'rb') as f:
+            return pickle.load(f)
 
     def f(self, K, data):
         """
@@ -192,148 +191,6 @@ class SSEClient:
         plaintext = cryptor.decrypt(cipher)
         return plaintext
 
-    def enc_doc(self, index, k):
-        with open('plain_text/' + str(index) + '.txt', encoding='UTF-8') as src:
-            with open('cipher_text/' + str(index) + '.enc', 'wb') as dst:
-                iv = os.urandom(AES.block_size)
-                cryptor = AES.new(k, AES.MODE_CFB, iv)
-                cipher = cryptor.encrypt(bytes(src.read(), encoding='UTF-8'))
-                dst.write(iv + cipher)
-
-    def dec_doc(self, index, k):
-        with open('cipher_text/' + str(index) + '.enc', 'rb') as src:
-            with open(str(index) + '.dec', 'w', encoding='UTF-8') as dst:
-                cipher = src.read()
-                iv = cipher[:AES.block_size]
-                cipher = cipher[AES.block_size:]
-                cryptor = AES.new(k, AES.MODE_CFB, iv)
-                plain = cryptor.decrypt(cipher)
-                dst.write(plain.decode('UTF-8'))
-
-    def gen(self):
-        """
-        Gen步骤，用于生成四个密钥
-        :param k: parameter
-        :return: (K1, K2, K3, K4)
-        """
-        self.k1 = Random.new().read(int(math.ceil(self.k / 8)))
-        self.k2 = Random.new().read(int(math.ceil(self.k / 8)))
-        self.k3 = Random.new().read(int(math.ceil(self.k / 8)))
-        # 对于k4,， 也使用同样的方法
-        self.k4 = Random.new().read(int(math.ceil(self.k / 8)))
-        return self.k1, self.k2, self.k3, self.k4
-
-    def enc(self, docs):
-        def initialization():
-            # step1. scan D and generate the set of distinct keywords δ(D)
-            self.distinct_word_set = scanner.generate_the_set_of_distinct_keywords_for_docs()[1]
-            # step2. for all w ∈ δ(D), generate D(w)
-            self.D_ = scanner.generate_Dw_for_each_keyword()
-            # step3. initialize a global counter ctr = 1 ---> see __init__()
-
-        def building_the_array_A():
-            # step4. for 1<=i<=|δ(D)|, build a list Li with nodes Ni,j and store it in array A as follows:
-            for i in range(1, len(self.distinct_word_set) + 1):
-                keyword = self.distinct_word_set[i - 1]  # 在这里注意论文中的i和程序中的i不同，应当减一
-                Ki = [None] * (len(self.D_[keyword]) + 1)
-                Ni = [None] * (len(self.D_[keyword]) + 1)
-                # sample a key Ki,0 <-$- {0, 1}^k
-                Ki[0] = Random.new().read(int(self.k / 8))
-                self.k0_for_each_keyword[keyword] = Ki[0]
-                # for 1<=j<=|D(wi)|-1
-                j = 0
-                for j in range(1, len(self.D_[keyword])):
-                    # let id(Di,j) be the jth identifier in D(wi)
-                    id_Dij = self.D_[keyword][j - 1]  # todo
-                    # generate a key Ki,j <- SKE1.Gen(1^k)
-                    Ki[j] = Random.new().read(int(self.k / 8))
-                    # if j == 1:
-                    #    self.k0_for_each_keyword[keyword] = Ki[j]
-                    # Ni[j] = str(id_Dij) + "|||" + str(Ki[j]) + "|||" + self.mu(Ki[j - 1], Ni[j])
-                    Ni[j] = id_Dij.to_bytes(self.file_cnt_byte, byteorder="big") + Ki[j] + self.mu(self.k1, num2byte(
-                        self.ctr + 1, int(self.s / 8)))
-                    index = self.mu(self.k1, num2byte(self.ctr, int(self.s / 8)))
-                    if j == 1:
-                        self.addrA[keyword] = index  # 保存头节点的地址到dict里面去
-                    index = int.from_bytes(index, byteorder="big")
-                    self.A[index] = self.SKEEnc(Ki[j - 1], Ni[j])
-
-                    if self.entry_size_of_A == -1:
-                        self.entry_size_of_A = len(self.A[index])
-
-                    self.ctr += 1
-                # for the last node of Li
-                # set the address of the next node to NULL: Ni,|D(wi)| = <id(Di,|D(wi)|) || 0^k || NULL>
-                j += 1  # ...
-                id_Dij = self.D_[keyword][len(self.D_[keyword]) - 1]
-                Ni[len(self.D_[keyword])] = id_Dij.to_bytes(self.file_cnt_byte, byteorder="big") + b"\x00" * int(
-                    self.k / 8) + b"\x00" * int(math.ceil(self.s / 8))  # todo
-                index = self.mu(self.k1, num2byte(self.ctr, int(self.s / 8)))
-
-                if j == 1:
-                    self.addrA[keyword] = index  # 保存头节点的地址到dict里面去
-                    # self.k0_for_each_keyword[keyword] = Ki[j]
-
-                index = int.from_bytes(index, byteorder="big")
-                self.A[index] = self.SKEEnc(Ki[j - 1], Ni[len(self.D_[keyword])])
-
-                # encrypt the node Ni,|D(wi)| under the key Ki,|D(wi)-1| and store it in A
-                self.ctr += 1
-
-            # step5. set the remaining s - s' entries of A to random values of the same size
-            # as the existing s' entries of A
-            for i in range(len(self.A)):
-                if self.A[i] is None:
-                    self.A[i] = Random.new().read(self.entry_size_of_A)
-
-        def building_the_look_up_table_T():
-            size = -1  # size为look-up table 中元素的长度，用于第7个步骤
-
-            # step6. for all wi ∈ δ(D), set T[π_K3(wi)] = <addr_A(N_i,1 || K_i,0)> ⊕ f_K2(wi)
-            for w in self.distinct_word_set:
-                index = self.pi(self.k3, str2byte(w))
-                index = int.from_bytes(index, byteorder="big")
-                self.T[index] = self.xor(self.addrA[w] + self.k0_for_each_keyword[w],
-                                         self.f(self.k2, str2byte(w)))
-                if size == -1:
-                    size = len(self.T[index])
-
-            # step7. if |δ(D)| < |△|, then set the remaining |△| - |δ(D)| entries of T to random values of the
-            # same size as the existing |δ(D)| entries of T
-            for i in range(2 ** self.l):
-                if self.T[i] is None:
-                    self.T[i] = Random.new().read(size)
-
-        def enc_docs():
-            # step8. for 1 <= i <= n, let ci <- SKE2.Enc_K4(Di)
-            DIR = 'plain_text'
-            file_count = len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
-            for i in range(file_count):
-                self.enc_doc(i, self.k4)
-
-        printer.print_info('创建索引中...')
-        initialization()
-
-        printer.print_info('加密索引中...')
-        building_the_array_A()
-        building_the_look_up_table_T()
-
-        printer.print_info('加密文档中...')
-        enc_docs()
-        printer.print_success('已就绪.')
-        # step9. output
-        return self.A, self.T
-
-    def Trpdr_K(self, w):
-        """
-        output t = (πK3(w), fK2(w))
-        :param w:
-        :return:
-        """
-        index = self.pi(self.k3, str2byte(w))
-        index = int.from_bytes(index, byteorder="big")
-        return index, self.f(self.k2, str2byte(w))
-
     def search(self, t):
         """
         todo I should be a parameter
@@ -366,76 +223,19 @@ class SSEClient:
                 break
         return res
 
-    def Dec_K(self, cipher_index):
-        return self.dec_doc(cipher_index, self.k4)
-
-    def save_encrypted_index(self):
-        """
-        保存加密后的索引数据
-        :return:
-        """
-        with open('index.enc', 'wb') as f:
-            pickle.dump([self.A, self.T], f)
-
-    # 下面为外部调用接口
-    def generate_keys(self):
-        """
-        生成密钥(k1,k2,k3,k4)
-        :return:
-        """
-        k1, k2, k3, k4 = self.gen()
-        print('========THE KEY========')
-        print('{}\n{}\n{}\n{}'.format(base64.b64encode(k1).decode(encoding='UTF-8'),
-                                      base64.b64encode(k2).decode(encoding='UTF-8'),
-                                      base64.b64encode(k3).decode(encoding='UTF-8'),
-                                      base64.b64encode(k4).decode(encoding='UTF-8')))
-        print('========THE KEY========')
-
-    def encrypt(self):
-        """
-        生成索引、加密索引和加密文档
-        :return:
-        """
-        printer.print_info('检查明文目录下文件名格式是否符合要求...')
-        if not scanner.check_filename_format():
-            printer.print_info('不符合文件命名格式，请问是否需要执行自动格式化文件名操作? (Y/N)')
-            ok = input()
-            if ok == 'y' or ok == 'Y':
-                scanner.reformat_filename()
-                printer.print_success('格式化文件名成功!')
-            else:
-                printer.print_error('软件终止...请自行更改文件名以满足要求!')
-        else:
-            printer.print_success('检查完毕，文件名符合要求!')
-
     def load_encrypted_index(self):
-        with open('index.enc', 'rb') as f:
+        with open(self.proj_dir_path + 'index.enc', 'rb') as f:
             itemlist = pickle.load(f)
             self.A, self.T = itemlist
 
-    def save_keys(self):
-        """
-        保存密钥K到本地
-        :return:
-        """
-        with open('xxx.key', 'wb') as f:
-            pickle.dump([self.k1, self.k2, self.k3, self.k4], f)
 
-    def load_keys(self):
-        """
-        读取密钥本地文件
-        :return:
-        """
-        with open('xxx.key', 'rb') as f:
-            self.k1, self.k2, self.k3, self.k4 = pickle.load(f)
+def test():
+    client = sse_client2.SSEClient(256, 16, 'test')
+    trapdoor = client.Trpdr_K('Xi')
+    server = SSEServer('test')
+    res = server.search(trapdoor)
+    print(res)
 
 
 if __name__ == '__main__':
-    client = SSEClient(256, 16)
-    client.load_keys()
-    client.load_encrypted_index()
-    while True:
-        keyword = input('Input the keyword: ')
-        tmp = client.Trpdr_K(keyword)
-        tmp = client.search(tmp)
-        print(tmp)
+    test()
