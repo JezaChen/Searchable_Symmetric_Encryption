@@ -27,8 +27,10 @@ def get_file_count(proj_dir_path=''):
     :return:
     """
     DIR = proj_dir_path + 'plain_text'
-    return len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
+    if not os.path.isdir(DIR):
+        DIR = proj_dir_path + 'cipher_text'
 
+    return len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
 
 def generate_the_set_of_distinct_keywords_for_docs(proj_dir_path=''):
     """

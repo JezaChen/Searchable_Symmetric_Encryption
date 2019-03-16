@@ -228,9 +228,9 @@ class SSEServer:
 
 
 def test():
-    client = sse_client2.SSEClient(256, 16, 'test2')
+    client = sse_client2.SSEClient(256, 16, 'test')
     trapdoor = client.Trpdr_K('Xi')
-    server = SSEServer('test2')
+    server = SSEServer('test')
     res = server.search(trapdoor)
     print(res)
 

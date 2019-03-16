@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7deffc89-0e39-4905-8484-975cc1ff839f" name="Default" comment="Update-20190228-基本完善客户端和服务器功能实现">
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/plain_text/5.txt" afterDir="false" />
+    <list default="true" id="7deffc89-0e39-4905-8484-975cc1ff839f" name="Default" comment="Update-20190228-进一步完善客户端和服务器功能实现">
+      <change afterPath="$PROJECT_DIR$/download_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/0.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/0.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/1.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/1.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/2.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/2.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/3.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/3.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/4.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/4.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher_text/5.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/5.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.enc" beforeDir="false" afterPath="$PROJECT_DIR$/index.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/scanner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sse_client2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sse_client2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sse_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sse_server2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/0.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/1.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/2.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/3.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/4.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cipher_text/5.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/plain_text/5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.key" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/plain_text/5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xxx.key" beforeDir="false" afterPath="$PROJECT_DIR$/xxx.key" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +47,15 @@
     <SUITE FILE_PATH="coverage/SSE$doc_enc.coverage" NAME="doc_enc Coverage Results" MODIFIED="1550823776073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$sse_client2.coverage" NAME="sse_client2 Coverage Results" MODIFIED="1551324622553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$sse_server.coverage" NAME="sse_server Coverage Results" MODIFIED="1551105958457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SSE$printer_for_cmd.coverage" NAME="printer_for_cmd Coverage Results" MODIFIED="1551323538912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_server2.coverage" NAME="sse_server2 Coverage Results" MODIFIED="1551367716938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client2.coverage" NAME="sse_client2 Coverage Results" MODIFIED="1551353742688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client.coverage" NAME="sse_client Coverage Results" MODIFIED="1552728551112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$upload_manager.coverage" NAME="upload_manager Coverage Results" MODIFIED="1552724798886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$sse_client.coverage" NAME="sse_client Coverage Results" MODIFIED="1551105950031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$search_manager.coverage" NAME="search_manager Coverage Results" MODIFIED="1552406052016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SSE$printer_for_cmd.coverage" NAME="printer_for_cmd Coverage Results" MODIFIED="1551323538912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_server2.coverage" NAME="sse_server2 Coverage Results" MODIFIED="1552728186554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client2.coverage" NAME="sse_client2 Coverage Results" MODIFIED="1552728308781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$printer.coverage" NAME="printer Coverage Results" MODIFIED="1551324495765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$download_manager.coverage" NAME="download_manager Coverage Results" MODIFIED="1552778407322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$scanner.coverage" NAME="scanner Coverage Results" MODIFIED="1551087146362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CoverageViewManager">
@@ -34,11 +63,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sse_client2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1980">
-              <caret line="567" column="54" selection-start-line="567" selection-start-column="54" selection-end-line="567" selection-end-column="54" />
+            <state relative-caret-position="142">
+              <caret line="275" column="14" lean-forward="true" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
+              <folding>
+                <element signature="e#15#24#0" expanded="true" />
+                <element signature="e#8868#9300#0" />
+                <element signature="e#9329#14271#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scanner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
@@ -49,10 +92,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sse_server2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1051">
-              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+            <state relative-caret-position="4662">
+              <caret line="230" selection-start-line="230" selection-end-line="230" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/search_manager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,8 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>”</find>
-      <find>“</find>
       <find>distinct_word_lst_of_each_doc</find>
       <find>distinct_word_lst</find>
       <find>AES.MODE</find>
@@ -88,8 +141,19 @@
       <find>join</find>
       <find>plain</find>
       <find>xxx</find>
-      <find>open</find>
       <find>pickle</find>
+      <find>exists</find>
+      <find>exist</find>
+      <find>remove</find>
+      <find>dir</find>
+      <find>open</find>
+      <find>digest</find>
+      <find>self.l</find>
+      <find>configz</find>
+      <find>load_config</find>
+      <find>config</find>
+      <find>Xi</find>
+      <find>dec_doc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,20 +167,23 @@
         <option value="$PROJECT_DIR$/pseudo_random_functions_and_permutations.py" />
         <option value="$PROJECT_DIR$/doc_enc.py" />
         <option value="$PROJECT_DIR$/sse_server.py" />
-        <option value="$PROJECT_DIR$/scanner.py" />
-        <option value="$PROJECT_DIR$/sse_client.py" />
         <option value="$PROJECT_DIR$/printer_for_cmd.py" />
         <option value="$PROJECT_DIR$/printer.py" />
-        <option value="$PROJECT_DIR$/sse_client2.py" />
+        <option value="$PROJECT_DIR$/cipher_text/upload_manager.py" />
         <option value="$PROJECT_DIR$/sse_server2.py" />
+        <option value="$PROJECT_DIR$/upload_manager.py" />
+        <option value="$PROJECT_DIR$/scanner.py" />
+        <option value="$PROJECT_DIR$/sse_client.py" />
+        <option value="$PROJECT_DIR$/download_manager.py" />
+        <option value="$PROJECT_DIR$/sse_client2.py" />
+        <option value="$PROJECT_DIR$/search_manager.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="455" />
-    <option name="y" value="-10" />
-    <option name="width" value="950" />
-    <option name="height" value="1080" />
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -131,22 +198,6 @@
               <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
               <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="plain_text" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
-              <item name="test2" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -155,13 +206,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="G:/Elevator_Maintenance_Management/github_proj" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\OneDrive_Jeza\OneDrive - jeza\SSE\Searchable_Symmetric_Encryption" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -181,8 +233,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sse_server2">
-    <configuration name="printer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.download_manager">
+    <configuration name="download_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -195,7 +247,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/printer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/download_manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,7 +256,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="printer_for_cmd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="search_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,7 +269,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/printer_for_cmd.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/search_manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,7 +278,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sse_client2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sse_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SSE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_client.py" />
+      <option name="PARAMETERS" value="-p test --find aaaaaaaa" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sse_client2" type="PythonConfigurationType" factoryName="Python">
       <module name="SSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -240,29 +314,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_client2.py" />
-      <option name="PARAMETERS" value="-p test2 --status" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sse_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SSE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_server.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="-p test --find aaaaaaaa" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -284,7 +336,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_server2.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="-p test --find aaaaaaaa" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="upload_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SSE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/upload_manager.py" />
+      <option name="PARAMETERS" value="--project test2 --find" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -293,19 +367,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sse_server" />
       <item itemvalue="Python.sse_client2" />
-      <item itemvalue="Python.printer_for_cmd" />
-      <item itemvalue="Python.printer" />
       <item itemvalue="Python.sse_server2" />
+      <item itemvalue="Python.upload_manager" />
+      <item itemvalue="Python.search_manager" />
+      <item itemvalue="Python.sse_client" />
+      <item itemvalue="Python.download_manager" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.download_manager" />
+        <item itemvalue="Python.sse_client" />
         <item itemvalue="Python.sse_server2" />
-        <item itemvalue="Python.sse_client2" />
-        <item itemvalue="Python.printer" />
-        <item itemvalue="Python.printer_for_cmd" />
-        <item itemvalue="Python.sse_server" />
+        <item itemvalue="Python.upload_manager" />
+        <item itemvalue="Python.search_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +397,15 @@
       <workItem from="1550689252737" duration="57156000" />
       <workItem from="1550995066075" duration="41543000" />
       <workItem from="1551230472880" duration="25334000" />
-      <workItem from="1551336975389" duration="13767000" />
+      <workItem from="1551336975389" duration="16862000" />
+      <workItem from="1551490741091" duration="912000" />
+      <workItem from="1551533637862" duration="498000" />
+      <workItem from="1551923764076" duration="699000" />
+      <workItem from="1551924482681" duration="5798000" />
+      <workItem from="1552305234673" duration="1418000" />
+      <workItem from="1552364990853" duration="12098000" />
+      <workItem from="1552722764139" duration="6142000" />
+      <workItem from="1552775873290" duration="2770000" />
     </task>
     <task id="LOCAL-00001" summary="Update-20190228-基本完善客户端和服务器功能实现">
       <created>1551344039116</created>
@@ -331,23 +414,55 @@
       <option name="project" value="LOCAL" />
       <updated>1551344039116</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update-20190228-进一步完善客户端和服务器功能实现">
+      <created>1551367807354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551367807354</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137800000" />
+    <option name="totallyTimeSpent" value="171230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12868632" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11863271" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32841823" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3914209" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3297587" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3297587" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32931727" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3297587" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13270777" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.308311" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.30428955" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -364,14 +479,15 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3297587" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update-20190228-基本完善客户端和服务器功能实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update-20190228-基本完善客户端和服务器功能实现" />
+    <MESSAGE value="Update-20190228-进一步完善客户端和服务器功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update-20190228-进一步完善客户端和服务器功能实现" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -385,6 +501,8 @@
         <watch expression="self.k2" language="Python" />
         <watch expression="int(math.ceil(self.k / 8))" language="Python" />
         <watch expression="self.A" language="Python" />
+        <watch expression="itemlist" language="Python" />
+        <watch expression="base64.b64encode(trapdoor[1])" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -397,6 +515,16 @@
       </expression>
     </expressions>
     <expressions id="watch">
+      <expression>
+        <expression-string>base64.b64encode(trapdoor[1])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>itemlist</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.A</expression-string>
         <language-id>Python</language-id>
@@ -437,28 +565,13 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>len(K)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plain_text/1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plain_text/0.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plain_text/3.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/plain_text/6.txt" />
     <entry file="file:///usr/lib/python2.7/re.py" />
@@ -527,9 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cipher_text/2.enc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/plain_text/2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -545,9 +655,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plain_text/75.txt" />
-    <entry file="file://$PROJECT_DIR$/cipher_text/4.enc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cipher_text/3.enc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -601,16 +708,6 @@
     <entry file="file://$PROJECT_DIR$/test/test.key">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sse_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8295">
-          <caret line="395" column="15" selection-start-line="395" selection-start-column="15" selection-end-line="395" selection-end-column="15" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/printer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1449">
@@ -621,22 +718,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scanner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2/config">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2/plain_text/0.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test2/plain_text/0.txt" />
     <entry file="file://$PROJECT_DIR$/printer_for_cmd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -654,22 +736,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sse_server2.py">
+    <entry file="file://$PROJECT_DIR$/cipher_text/4.enc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cipher_text/2.enc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cipher_text/1.enc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2/index.enc" />
+    <entry file="file://$PROJECT_DIR$/test2/config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/plain_text/1.txt" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/getopt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1051">
-          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+        <state relative-caret-position="-499">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plain_text/1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="12" column="156" selection-start-line="12" selection-start-column="154" selection-end-line="12" selection-end-column="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plain_text/3.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/requests/adapters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9807">
+          <caret line="497" selection-start-line="497" selection-end-line="497" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sse_client2.py">
+    <entry file="file://$PROJECT_DIR$/sse_server2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="567" column="54" selection-start-line="567" selection-start-column="54" selection-end-line="567" selection-end-column="54" />
+        <state relative-caret-position="4662">
+          <caret line="230" selection-start-line="230" selection-end-line="230" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sse_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="429" column="4" selection-start-line="429" selection-start-column="4" selection-end-line="429" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="14" selection-end-line="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sse_client2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="275" column="14" lean-forward="true" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+            <element signature="e#8868#9300#0" />
+            <element signature="e#9329#14271#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

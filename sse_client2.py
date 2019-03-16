@@ -15,6 +15,8 @@ import base64
 import pickle
 import shutil
 import getopt
+import upload_manager
+import search_manager
 
 
 def byte_alignment(length):
@@ -104,16 +106,28 @@ def get_status_by_bits(bits):
 
 
 class SSEClient:
-    def __init__(self, k, l, proj_name):
-        # 检查参数，进行必要的错误或警告报告
-        if k != 128 and k != 192 and k != 256:
-            printer.print_error('The key length of AES must be 128, 192 or 256 bits.')
-            sys.exit(1)
-        if l % 8 != 0:
-            printer.print_warning('The length of the parameter l is not an integer multiple of 8.')
-
+    def __init__(self, proj_name, k=0, l=0):
         self.proj_name = proj_name
         self.proj_dir_path = proj_name + '/'
+
+        if os.path.isdir(self.proj_dir_path):  # 如果项目已经存在，不需要指定k和l，直接读取参数文件
+            self.k, self.l, self.s = self.load_config()
+        else:
+            # 检查参数，进行必要的错误或警告报告
+            if k != 128 and k != 192 and k != 256:
+                printer.print_error('The key length of AES must be 128, 192 or 256 bits.')
+                sys.exit(1)
+            if l % 8 != 0:
+                printer.print_warning('The length of the parameter l is not an integer multiple of 8.')
+
+            self.k = k
+            self.k = byte_alignment(self.k)
+
+            self.s = scanner.get_s()  # todo
+            self.s = byte_alignment(self.s)
+
+            self.l = l  # 在论文中，参数l需要指定
+            self.l = byte_alignment(self.l)
 
         # 状态信息变量
         self.exists_plain_texts = False  # 是否存在明文集
@@ -128,14 +142,6 @@ class SSEClient:
         self.status_bits = 0
         self.set_status_bits()  # 判断当前proj的状态
 
-        self.k = k
-        self.k = byte_alignment(self.k)
-
-        self.s = scanner.get_s()
-        self.s = byte_alignment(self.s)
-
-        self.l = l  # 在论文中，参数l需要指定
-        self.l = byte_alignment(self.l)
         self.T = [None] * (2 ** self.l)
 
         self.k1, self.k2, self.k3, self.k4 = None, None, None, None
@@ -255,7 +261,7 @@ class SSEClient:
                 cipher = cryptor.encrypt(bytes(src.read(), encoding='UTF-8'))
                 dst.write(iv + cipher)
 
-    def dec_doc(self, index, k):
+    def dec_doc_given_index(self, index, k):
         with open(self.proj_dir_path + 'cipher_text/' + str(index) + '.enc', 'rb') as src:
             with open(self.proj_dir_path + str(index) + '.dec', 'w', encoding='UTF-8') as dst:
                 cipher = src.read()
@@ -264,6 +270,20 @@ class SSEClient:
                 cryptor = AES.new(k, AES.MODE_CFB, iv)
                 plain = cryptor.decrypt(cipher)
                 dst.write(plain.decode('UTF-8'))
+
+    def dec_doc_given_cipher(self, cipher, k):
+        """
+        给定密文和密钥，返回明文数据
+        :param cipher: 密文
+        :param k: 解密密钥
+        :return:
+        """
+        iv = cipher[:AES.block_size]
+        cipher = cipher[AES.block_size:]
+        cryptor = AES.new(k, AES.MODE_CFB, iv)
+        plain = cryptor.decrypt(cipher)
+        return plain
+
 
     def gen(self):
         """
@@ -422,7 +442,7 @@ class SSEClient:
         return res
 
     def Dec_K(self, cipher_index):
-        return self.dec_doc(cipher_index, self.k4)
+        return self.dec_doc_given_index(cipher_index, self.k4)
 
     def save_encrypted_index(self):
         """
@@ -475,6 +495,14 @@ class SSEClient:
         if os.path.isdir(self.proj_dir_path + 'plain_text') and os.listdir(self.proj_dir_path + 'plain_text'):
             self.status_bits = self.status_bits | 8
         # todo 哈希对比
+
+    def load_config(self):
+        """
+        读取配置文件
+        :return: k, l, s
+        """
+        with open(self.proj_dir_path + 'config', 'rb') as f:
+            return pickle.load(f)
 
     # 下面为外部调用接口
     def status(self):
@@ -592,34 +620,69 @@ class SSEClient:
             self.save_encrypted_index()  # 记得保存索引
             printer.print_success('加密索引和文档成功')
 
-        # if get_status_by_bits(self.status_bits) == 2:
-        #     printer.print_error('项目不存在，请先使用init方法对项目进行初始化操作，程序退出...')
-        #
-        # if self.status_bits & 8 == 0:
-        #     printer.print_error('明文集目前为空，无法进行加密操作，程序退出...')
-        #     return
-        # if self.status_bits & 2 == 0:
-        #     printer.print_error('找不到密钥文件，请确保已调用enc方法生成密钥文件，程序退出...')
-        #     return
+        def delete_local_plain_texts():
+            """
+            加密操作成功后，删除本地上的明文文件
+            :return:
+            """
+            shutil.rmtree(self.proj_dir_path + 'plain_text')
+
         if 2 <= get_status_by_bits(self.status_bits) < 5 or get_status_by_bits(self.status_bits) == 7:
             printer.print_error('操作失败，理由: ')
             self.status()
             return
 
         encrypt_action()
+        delete_local_plain_texts()
 
     def upload(self):
         """
         上传密文、加密后的索引、配置文件到服务器上
         :return:
         """
-
         def upload_action():
-            pass
+            return upload_manager.upload_to_server(self.proj_name, 'Y')
+
+        def delete_local_cipher():
+            """
+            如果上传完毕，删除本地上的密文集和加密索引
+            :return:
+            """
+            shutil.rmtree(self.proj_dir_path + 'cipher_text')
+            os.remove(self.proj_dir_path + 'index.enc')
+
+        if 2 <= get_status_by_bits(self.status_bits) < 6:
+            printer.print_error('操作失败，理由: ')
+            self.status()
+            return
+        res = upload_action()
+        if res != 'success':
+            print('上传失败！服务器返回信息如下：')
+            print(res)
+        else:
+            print('上传成功!')
+            delete_local_cipher()
+
+    def search(self, keyword):
+        """
+        执行搜索操作
+        :param keyword: 待搜索的关键词
+        :return:
+        """
+        def search_action():
+            return search_manager.search_once_from_server(self, keyword)
+
+        if get_status_by_bits(self.status_bits) != 1:
+            printer.print_error('操作失败，理由: ')
+            self.status()
+            return
+        res = search_action()
+        print('搜索结果如下:')
+        print(res)
 
 
 def test():
-    client = SSEClient(256, 16, 'test')
+    client = SSEClient('test', 256, 16)
     client.generate_keys()
     client.save_keys()
     client.encrypt()
@@ -634,20 +697,25 @@ def test():
 
 def test1():
     client = SSEClient(256, 16, 'test')
-    # client.init()
-    # client.generate_keys()
     client.encrypt()
     client.status()
 
 
+def search_multiple_times(client):
+    keyword = input('>>>')
+    while keyword is not None:
+        client.search(keyword)
+        keyword = input('>>>')
+
+
 def parse_args():
-    opts, args = getopt.getopt(sys.argv[1:], '-s-p:-i-g-e-u-f',
+    opts, args = getopt.getopt(sys.argv[1:], '-s-p:-i-g-e-u-f:',
                                ['status', 'project', 'init', 'gen', 'enc', 'upload', 'find'])
     client = None
     # 先初始化SSEClient对象
     for opt_name, opt_val in opts:
         if opt_name in ('-p', '--project'):
-            client = SSEClient(256, 16, opt_val)
+            client = SSEClient(opt_val, 256, 16)
             break
 
     if client is None:
@@ -664,13 +732,15 @@ def parse_args():
         if opt_name in ('-e', '--enc'):
             client.encrypt()
         if opt_name in ('-u', '--upload'):
-            # client.upload
-            pass
+            client.upload()
         if opt_name in ('-f', '--find'):
-            # client.find --> client.trpdrK
-            pass
+            keyword = opt_val
+            if keyword != '':
+                client.search(keyword)
+            else:
+                search_multiple_times(client)
 
 
 if __name__ == '__main__':
-    # test1()
     parse_args()
+    # test()
