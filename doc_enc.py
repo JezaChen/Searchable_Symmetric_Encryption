@@ -1,14 +1,7 @@
 # coding=utf-8
 import os
-import re
-import hashlib
-import random
-import math
-import array
-import string
 from Crypto.Cipher import AES
 from Crypto import Random
-import scanner
 
 
 def enc_doc(index, k):

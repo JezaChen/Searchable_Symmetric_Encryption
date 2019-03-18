@@ -1,8 +1,6 @@
 import requests
-import base64
-import scanner
-from sse_client2 import *
-import download_manager
+from sse_client import *
+import json
 
 
 def search_once_from_server(client, keyword):
@@ -18,8 +16,8 @@ def search_once_from_server(client, keyword):
     param = {'name': client.proj_name,
              'trapdoor': str(trapdoor[0]) + '.' + str(base64.b64encode(trapdoor[1]), encoding='utf-8')}
     res = requests.post('http://127.0.0.1:8000/search', data=param)
-    return res.text
+    return json.loads(res.text)
 
 
 if __name__ == '__main__':
-    search_once_from_server(SSEClient(256, 16, 'test'), 'China')
+    print(search_once_from_server(SSEClient('test', 256, 16), 'China'))

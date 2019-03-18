@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7deffc89-0e39-4905-8484-975cc1ff839f" name="Default" comment="Update-20190228-进一步完善客户端和服务器功能实现">
-      <change afterPath="$PROJECT_DIR$/download_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload_manager.py" afterDir="false" />
+    <list default="true" id="7deffc89-0e39-4905-8484-975cc1ff839f" name="Default" comment="Update-20190317-最后一次大改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/0.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/0.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/1.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/1.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/2.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/2.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/3.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/3.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/4.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/4.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher_text/5.enc" beforeDir="false" afterPath="$PROJECT_DIR$/cipher_text/5.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.enc" beforeDir="false" afterPath="$PROJECT_DIR$/index.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/download_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain_text/5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pseudo_random_functions_and_permutations.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/scanner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sse_client2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sse_client2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sse_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sse_server2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/0.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/1.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/2.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/3.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/4.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cipher_text/5.enc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/plain_text/5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.key" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/plain_text/5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xxx.key" beforeDir="false" afterPath="$PROJECT_DIR$/xxx.key" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,29 +27,59 @@
     <SUITE FILE_PATH="coverage/SSE$sse_server.coverage" NAME="sse_server Coverage Results" MODIFIED="1551105958457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client.coverage" NAME="sse_client Coverage Results" MODIFIED="1552728551112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$upload_manager.coverage" NAME="upload_manager Coverage Results" MODIFIED="1552724798886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$scanner.coverage" NAME="scanner Coverage Results" MODIFIED="1552866244734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$sse_client.coverage" NAME="sse_client Coverage Results" MODIFIED="1551105950031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$search_manager.coverage" NAME="search_manager Coverage Results" MODIFIED="1552406052016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$search_manager.coverage" NAME="search_manager Coverage Results" MODIFIED="1552779382448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$printer_for_cmd.coverage" NAME="printer_for_cmd Coverage Results" MODIFIED="1551323538912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_server2.coverage" NAME="sse_server2 Coverage Results" MODIFIED="1552728186554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client2.coverage" NAME="sse_client2 Coverage Results" MODIFIED="1552728308781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$sse_client2.coverage" NAME="sse_client2 Coverage Results" MODIFIED="1552866676960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$printer.coverage" NAME="printer Coverage Results" MODIFIED="1551324495765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$download_manager.coverage" NAME="download_manager Coverage Results" MODIFIED="1552778407322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Searchable_Symmetric_Encryption$download_manager.coverage" NAME="download_manager Coverage Results" MODIFIED="1552800955471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SSE$scanner.coverage" NAME="scanner Coverage Results" MODIFIED="1551087146362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="293" />
+    <option name="myElementSize" value="334" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sse_client2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="275" column="14" lean-forward="true" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
+            <state relative-caret-position="150">
+              <caret line="666" selection-start-line="666" selection-end-line="666" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
-                <element signature="e#8868#9300#0" />
-                <element signature="e#9329#14271#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="mock://C:\Users\Jeza\.PyCharm2018.3\system\snapshots\Searchable_Symmetric_Encryption1.pstat">
+          <provider selected="true" editor-type-id="profiler-session-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="mock://C:\Users\Jeza\.PyCharm2018.3\system\snapshots\Searchable_Symmetric_Encryption2.pstat">
+          <provider selected="true" editor-type-id="profiler-session-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/getopt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5">
+              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload_manager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-210">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scanner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+            <state relative-caret-position="-1629">
+              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
@@ -90,22 +98,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sse_server2.py">
+        <entry file="file://$PROJECT_DIR$/printer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4662">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
+            <state relative-caret-position="882">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="20" />
               <folding>
-                <element signature="e#15#24#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/search_manager.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="66">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -124,12 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>distinct_word_lst_of_each_doc</find>
-      <find>distinct_word_lst</find>
-      <find>AES.MODE</find>
-      <find>log</find>
-      <find>DIR</find>
-      <find>file_cnt_byte</find>
       <find>to_bytes</find>
       <find>log2</find>
       <find>ctr</find>
@@ -141,7 +143,6 @@
       <find>join</find>
       <find>plain</find>
       <find>xxx</find>
-      <find>pickle</find>
       <find>exists</find>
       <find>exist</find>
       <find>remove</find>
@@ -151,9 +152,16 @@
       <find>self.l</find>
       <find>configz</find>
       <find>load_config</find>
-      <find>config</find>
       <find>Xi</find>
       <find>dec_doc</find>
+      <find>dec_doc_given_index</find>
+      <find>file_cnt</find>
+      <find>pickle</find>
+      <find>config</find>
+      <find>pickle.load</find>
+      <find>get_file</find>
+      <find>self.s</find>
+      <find>print(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,11 +180,12 @@
         <option value="$PROJECT_DIR$/cipher_text/upload_manager.py" />
         <option value="$PROJECT_DIR$/sse_server2.py" />
         <option value="$PROJECT_DIR$/upload_manager.py" />
-        <option value="$PROJECT_DIR$/scanner.py" />
         <option value="$PROJECT_DIR$/sse_client.py" />
         <option value="$PROJECT_DIR$/download_manager.py" />
-        <option value="$PROJECT_DIR$/sse_client2.py" />
         <option value="$PROJECT_DIR$/search_manager.py" />
+        <option value="$PROJECT_DIR$/test_x/plain_text/Wang Yi Meets with Foreign Minister George Katrougalos of Greece.txt" />
+        <option value="$PROJECT_DIR$/scanner.py" />
+        <option value="$PROJECT_DIR$/sse_client2.py" />
       </list>
     </option>
   </component>
@@ -197,6 +206,16 @@
             <path>
               <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
               <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
+              <item name="test3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Searchable_Symmetric_Encryption" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Searchable_Symmetric_Encryption" type="462c0819:PsiDirectoryNode" />
+              <item name="test_x" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.download_manager">
+  <component name="RunManager" selected="Python.sse_client2">
     <configuration name="download_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,6 +267,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/download_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scanner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SSE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scanner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -313,8 +354,8 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_client2.py" />
-      <option name="PARAMETERS" value="-p test --find aaaaaaaa" />
+      <option name="SCRIPT_NAME" value="G:\OneDrive_Jeza\OneDrive - jeza\SSE\Searchable_Symmetric_Encryption\sse_client.py" />
+      <option name="PARAMETERS" value="-p test_x --find=Xi" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -335,30 +376,8 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sse_server2.py" />
+      <option name="SCRIPT_NAME" value="G:\OneDrive_Jeza\OneDrive - jeza\SSE\Searchable_Symmetric_Encryption\sse_server.py" />
       <option name="PARAMETERS" value="-p test --find aaaaaaaa" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="upload_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SSE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/upload_manager.py" />
-      <option name="PARAMETERS" value="--project test2 --find" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -369,18 +388,18 @@
     <list>
       <item itemvalue="Python.sse_client2" />
       <item itemvalue="Python.sse_server2" />
-      <item itemvalue="Python.upload_manager" />
       <item itemvalue="Python.search_manager" />
       <item itemvalue="Python.sse_client" />
       <item itemvalue="Python.download_manager" />
+      <item itemvalue="Python.scanner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scanner" />
         <item itemvalue="Python.download_manager" />
+        <item itemvalue="Python.search_manager" />
         <item itemvalue="Python.sse_client" />
         <item itemvalue="Python.sse_server2" />
-        <item itemvalue="Python.upload_manager" />
-        <item itemvalue="Python.search_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -405,7 +424,8 @@
       <workItem from="1552305234673" duration="1418000" />
       <workItem from="1552364990853" duration="12098000" />
       <workItem from="1552722764139" duration="6142000" />
-      <workItem from="1552775873290" duration="2770000" />
+      <workItem from="1552775873290" duration="14884000" />
+      <workItem from="1552821906840" duration="14690000" />
     </task>
     <task id="LOCAL-00001" summary="Update-20190228-基本完善客户端和服务器功能实现">
       <created>1551344039116</created>
@@ -421,31 +441,37 @@
       <option name="project" value="LOCAL" />
       <updated>1551367807354</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update-20190317-最后一次大改">
+      <created>1552779119997</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552779119997</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171230000" />
+    <option name="totallyTimeSpent" value="198034000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11863271" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11997319" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32841823" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3914209" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27345845" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3914209" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3297587" />
+      <window_info anchor="bottom" x="203" y="267" width="823" height="487" id="Terminal" order="9" type="FLOATING" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3297587" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3297587" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32931727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -487,7 +513,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update-20190228-基本完善客户端和服务器功能实现" />
     <MESSAGE value="Update-20190228-进一步完善客户端和服务器功能实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update-20190228-进一步完善客户端和服务器功能实现" />
+    <MESSAGE value="Update-20190317-最后一次大改" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update-20190317-最后一次大改" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -503,6 +530,9 @@
         <watch expression="self.A" language="Python" />
         <watch expression="itemlist" language="Python" />
         <watch expression="base64.b64encode(trapdoor[1])" language="Python" />
+        <watch expression="s" language="Python" />
+        <watch expression="self.s" language="Python" />
+        <watch expression="self.k" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -515,6 +545,21 @@
       </expression>
     </expressions>
     <expressions id="watch">
+      <expression>
+        <expression-string>self.k</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.s</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>s</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>base64.b64encode(trapdoor[1])</expression-string>
         <language-id>Python</language-id>
@@ -550,64 +595,14 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>self.addrA[w]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.addrA[&quot;income&quot;]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.addrA</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plain_text/0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plain_text/6.txt" />
-    <entry file="file:///usr/lib/python2.7/re.py" />
-    <entry file="uml://JavaScript-modules-diagram/C:/Users/Jeza/Desktop/SSE">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="653.0" y="209.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cipher_text/0.enc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/0.dec">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pseudo_random_functions_and_permutations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc_enc.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -633,49 +628,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Hash/SHA3_256.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plain_text/2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="81" column="204" selection-start-line="81" selection-start-column="204" selection-end-line="81" selection-end-column="204" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Cipher/_mode_cfb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="222" selection-start-line="222" selection-end-line="222" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/plain_text/2.txt" />
     <entry file="file://$PROJECT_DIR$/plain_text/75.txt" />
     <entry file="file://$PROJECT_DIR$/cipher_text/3.enc">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Cipher/AES.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Cipher/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Util/_raw_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="244" selection-start-line="244" selection-end-line="244" />
         </state>
       </provider>
     </entry>
@@ -707,16 +668,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.key">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/printer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test2/plain_text/0.txt" />
     <entry file="file://$PROJECT_DIR$/printer_for_cmd.py">
@@ -750,47 +701,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test/plain_text/1.txt" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/getopt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-499">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plain_text/1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="12" column="156" selection-start-line="12" selection-start-column="154" selection-end-line="12" selection-end-column="156" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plain_text/3.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/plain_text/1.txt" />
+    <entry file="file://$PROJECT_DIR$/plain_text/3.txt" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/requests/adapters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9807">
           <caret line="497" selection-start-line="497" selection-end-line="497" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scanner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sse_server2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4662">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,44 +720,189 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/download_manager.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Cipher/_mode_cfb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="142">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Cipher/AES.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Util/_raw_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3/config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sse_server2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="225" column="34" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="34" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#15#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3/search_results/Chen/ping.txt" />
+    <entry file="file://$PROJECT_DIR$/plain_text/ping.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7392">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7245">
+          <caret line="347" selection-start-line="347" selection-end-line="347" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#G:/OneDrive_Jeza/OneDrive - jeza/SSE/Searchable_Symmetric_Encryption/sse_client2.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#G:/OneDrive_Jeza/OneDrive - jeza/SSE/Searchable_Symmetric_Encryption/sse_client2.py</OriginalElement>
+          <nodes>
+            <node x="" y="">sse_client2.SSEClient</node>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="76.0" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/G:/OneDrive_Jeza/OneDrive - jeza/SSE/Searchable_Symmetric_Encryption">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="656.5" y="224.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pseudo_random_functions_and_permutations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/Crypto/Hash/SHA3_256.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="14" selection-end-line="36" />
+        <state relative-caret-position="-210">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sse_client2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="275" column="14" lean-forward="true" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-            <element signature="e#8868#9300#0" />
-            <element signature="e#9329#14271#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="-54">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="27" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="323" column="37" selection-start-line="323" selection-start-column="37" selection-end-line="323" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_x/plain_text/Wang Yi Meets with Co-chair of the Intergovernmental Negotiations on the United Nations (UN) Security Council Reform of the 73rd Session of the UN General Assem.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_x/plain_text/Wang Yi Meets with Foreign Minister George Katrougalos of Greece.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/getopt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1629">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sse_client2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="666" selection-start-line="666" selection-end-line="666" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
